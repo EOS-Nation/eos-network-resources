@@ -6,14 +6,15 @@
 <summary><b>Network security</b></summary>
 
 - Voter participation must not decrease
+- Network must not be at increased risk
 
 </details>
 
 <details>
 <summary><b>Code security</b></summary>
 
-- minimal code impacts
-- no risk of loss of funds
+- Minimal code impacts
+- No risk of loss of funds
 
 </details>
 
