@@ -1,6 +1,23 @@
 # EOS Network Resources
 
-## Overview
+## Core values
+
+<details>
+<summary><b>Network security</b></summary>
+
+- Voter participation must not decrease
+
+</details>
+
+<details>
+<summary><b>Code security</b></summary>
+
+- minimal code impacts
+- no risk of loss of funds
+
+</details>
+
+## Proposals
 
 <details>
 <summary><b>1. Modify RAM increase rate</b></summary>
