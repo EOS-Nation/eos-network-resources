@@ -13,8 +13,9 @@
 <details>
 <summary><b>Code security</b></summary>
 
-- Minimal code impacts
+- Minimal system contract modifications
 - No risk of loss of funds
+- Code review should contain minimal code complexity
 
 </details>
 
@@ -44,36 +45,47 @@
 
 ### Proposal
 
-- Modify `producer_pay::claimrewards` to support `rex::channel_to_rex` to accept a portion of unallocated inflation
-- Set `eosio::setinflation` to the following parameters:
-  - `annual_rate=500`
-  - `inflation_pay_factor=50000`
-- Remove `check_voting_requirement` checks from `buyrex`
-  - removes proxy or vote for 21+ BPs requirement
-  - allows for neutral actors to participate in REX (ex: EOS EVM Bridge)
+- REX to accept a portion of unallocated inflation
+  - modify `producer_pay::claimrewards` to support `rex::channel_to_rex`
+  - define new `global5` table with `inflation_rex_factor=20000` (previously 0)
+  - define new `setrexfactor` action to modify `inflation_rex_factor`
+- Increase +2% of unallocated inflation going to REX
+  - call `eosio::setinflation` action with the following parameters:
+    - `annual_rate=500` (previously 300)
+    - `inflation_pay_factor=50000` (previously 30000)
+- Remove proxy or vote for 21+ BPs requirement from REX
+  - remove `check_voting_requirement` checks from `buyrex`
+    - resolves circular dependencies between `delegatebw`, `voteproducer`, and `buyrex`. [#51](https://github.com/EOSIO/eosio.system/issues/51)
+    - allows for neutral actors to participate in REX (ex: EOS EVM Bridge)
+- Increase REX staking period
+  - modify `num_of_maturity_buckets=8` to change staking period from 4 days to 7 days
 
-### Roadmap
+### Proposal (technical review required)
 
-- Improvements to `mvtosavings` and `mvfrsavings` to be a requirement for `buyrex`
-- Increase `num_of_maturity_buckets` to 28
+- Prevent REX liquid staking
+  - modify `mvtosavings` and `mvfrsavings` to be a requirement for `buyrex`
+  - matured REX loans should automatically trigger `sellrex` action
 
 </details>
 
 <details>
 <summary><b>4. PowerUp technical improvement</b></summary>
 
-### Proposal
+### No Change
+
+- Powerup CPU/NET ratios remain unchanged
+
+### Proposal (technical review required)
 - Powerup utility smart contract actions (must be backwards compatible)
     - Allow for auto-renewal (similar to how REX had renewals)
     - Pay with fixed amount of EOS (instead of calculating net/cpu ratios)
-- No change in powerup CPU/NET ratios
 
 </details>
 
 <details>
 <summary><b>5. Unified Resources</b></summary>
 
-### Proposal
+### Proposal (technical review required)
 
 - Combined CPU + NET as single ephemeral resource
   - Deprecates the requirement of NET
