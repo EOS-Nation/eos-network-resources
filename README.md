@@ -24,15 +24,21 @@
 <details>
 <summary><b>1. Modify RAM increase rate</b></summary>
 
+### Timeline
+- Immediate
+
 ### Proposal
 - `eosio::setramrate` to `bytes_per_block=0`
 
-### Roadmap
+### Considerations
 - Allow for signed integer for `bytes_per_block` RAM rate (allows decreasing virtual RAM supply)
 </details>
 
 <details>
 <summary><b>2. Increase CPU block size</b></summary>
+
+### Timeline
+- Immediate
 
 ### Proposal
 - Increase `max_block_cpu_usage` (requirement for EOS EVM transactions)
@@ -41,7 +47,22 @@
 </details>
 
 <details>
-<summary><b>3. Staking Rewards</b></summary>
+<summary><b>3. Removal of Deferred Transactions from System Contract</b></summary>
+
+### Timeline
+- Immediate
+
+### Proposal
+- Deploy latest v3.2.0 system contract
+- Within the system contracts the actions `system_contract::bidname`, `system_contract::buyram`, `wrap::exec` no longer issue deferred transactions. This is a change for the `system_contract::bidname` action, and failed bids will need an explict refund. For the `system_contract::buyram` action the default behavior remains unchanged. The `wrap::exec` action has been rewritten to use send instead of `send_deferred`.
+
+</details>
+
+<details>
+<summary><b>4. Staking Rewards</b></summary>
+
+### Timeline
+- Requires development and testing
 
 ### Proposal
 
@@ -57,11 +78,10 @@
   - remove `check_voting_requirement` checks from `buyrex`
     - resolves circular dependencies between `delegatebw`, `voteproducer`, and `buyrex`. [#51](https://github.com/EOSIO/eosio.system/issues/51)
     - allows for neutral actors to participate in REX (ex: EOS EVM Bridge)
+
+### Considerations
 - Increase REX staking period
   - modify `num_of_maturity_buckets=8` to change staking period from 4 days to 7 days
-
-### Proposal (technical review required)
-
 - Prevent REX liquid staking
   - modify `mvtosavings` and `mvfrsavings` to be a requirement for `buyrex`
   - matured REX loans should automatically trigger `sellrex` action
@@ -69,13 +89,16 @@
 </details>
 
 <details>
-<summary><b>4. PowerUp technical improvement</b></summary>
+<summary><b>5. PowerUp technical improvement</b></summary>
+
+### Timeline
+- Requires development and testing
 
 ### No Change
 
 - Powerup CPU/NET ratios remain unchanged
 
-### Proposal (technical review required)
+### Proposal
 - Powerup utility smart contract actions (must be backwards compatible)
     - Allow for auto-renewal (similar to how REX had renewals)
     - Pay with fixed amount of EOS (instead of calculating net/cpu ratios)
@@ -83,9 +106,12 @@
 </details>
 
 <details>
-<summary><b>5. Unified Resources</b></summary>
+<summary><b>6. Unified Resources</b></summary>
 
-### Proposal (technical review required)
+### Timeline
+- Requires development and testing
+
+### Proposal
 
 - Combined CPU + NET as single ephemeral resource
   - Deprecates the requirement of NET
