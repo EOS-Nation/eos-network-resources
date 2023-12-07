@@ -1,6 +1,6 @@
 # EOS Network Resources
 
-## Core values
+## Core principles
 
 <details>
 <summary><b>Network security</b></summary>
