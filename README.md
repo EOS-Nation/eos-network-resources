@@ -35,16 +35,7 @@
 </details>
 
 <details>
-<summary><b>2. ✅ Increase CPU block size</b></summary>
-
-### Proposal
-- Increase `max_block_cpu_usage` (requirement for EOS EVM transactions)
-- Increase `max_inline_action_depth=32` (allows for more inline actions)
-
-</details>
-
-<details>
-<summary><b>3. ✅ Removal of Deferred Transactions from System Contract</b></summary>
+<summary><b>2. ✅ Removal of Deferred Transactions from System Contract</b></summary>
 
 ### Timeline
 - Immediate
@@ -56,7 +47,7 @@
 </details>
 
 <details>
-<summary><b>4. 🚧 Staking Rewards</b></summary>
+<summary><b>3. 🚧 Staking Rewards</b></summary>
 
 ### Timeline
 - Requires development and testing
@@ -90,6 +81,21 @@
 </details>
 
 <details>
+<summary><b>4. 🚧 Increase maximum transaction time</b></summary>
+
+### Operations
+- Deployment of Leap 5.0.0 (stable release)
+  - Assuming default of 30 ms for `max-transaction-time`, that effectively raises the CPU time available by 5x to 150 ms.
+  - Leap 5.0.0 brings the selective EOS VM OC feature which may increase some computations in EOS EVM by a similar multiplier.
+  - That is already getting us a significant gain in computation capacity per EOS transaction which should translate to higher overall gas limits per EVM transaction (assuming 1 EVM transaction per EOS transaction).
+
+### No Change
+
+- There is no need at the moment to further raise `max_transaction_cpu_usage` for the purposes of EOS EVM.
+
+</details>
+
+<details>
 <summary><b>5. 🚧 PowerUp technical improvement</b></summary>
 
 ### Timeline
@@ -101,8 +107,11 @@
 
 ### Proposal
 - Powerup utility smart contract actions (must be backwards compatible)
-    - Allow for auto-renewal (similar to how REX had renewals)
-    - Pay with fixed amount of EOS (instead of calculating net/cpu ratios)
+- Allow for auto-renewal
+  - similar to REX's `loan_fund` when using `eosio::rentcpu` action
+- Pay with fixed amount of EOS
+  - similar to REX's `loan_payment` when using `eosio::rentcpu` action
+  - auto-calculates net/cpu ratios based on current network usage
 
 </details>
 
