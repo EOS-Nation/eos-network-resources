@@ -22,7 +22,7 @@
 ## Proposals
 
 <details>
-<summary><b>1. Modify RAM increase rate</b></summary>
+<summary><b>1. ✅ Modify RAM increase rate</b></summary>
 
 ### Timeline
 - Immediate
@@ -35,10 +35,7 @@
 </details>
 
 <details>
-<summary><b>2. Increase CPU block size</b></summary>
-
-### Timeline
-- Immediate
+<summary><b>2. ✅ Increase CPU block size</b></summary>
 
 ### Proposal
 - Increase `max_block_cpu_usage` (requirement for EOS EVM transactions)
@@ -47,7 +44,7 @@
 </details>
 
 <details>
-<summary><b>3. Removal of Deferred Transactions from System Contract</b></summary>
+<summary><b>3. ✅ Removal of Deferred Transactions from System Contract</b></summary>
 
 ### Timeline
 - Immediate
@@ -59,7 +56,7 @@
 </details>
 
 <details>
-<summary><b>4. Staking Rewards</b></summary>
+<summary><b>4. 🚧 Staking Rewards</b></summary>
 
 ### Timeline
 - Requires development and testing
@@ -89,7 +86,7 @@
 </details>
 
 <details>
-<summary><b>5. PowerUp technical improvement</b></summary>
+<summary><b>5. 🚧 PowerUp technical improvement</b></summary>
 
 ### Timeline
 - Requires development and testing
@@ -106,7 +103,7 @@
 </details>
 
 <details>
-<summary><b>6. Unified Resources</b></summary>
+<summary><b>6. 🚧📖 Unified Resources</b></summary>
 
 ### Timeline
 - Requires development and testing
@@ -120,3 +117,8 @@
   - Extends WharfKit's co-signing wallet feature
 
 </details>
+
+### Notes
+- ✅ ready to deploy
+- 🚧 requires development & testing
+- 📖 requires additional research
