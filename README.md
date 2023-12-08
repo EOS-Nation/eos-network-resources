@@ -83,6 +83,10 @@
   - modify `mvtosavings` and `mvfrsavings` to be a requirement for `buyrex`
   - matured REX loans should automatically trigger `sellrex` action
 
+### References
+
+- [WAX Tokenomics Upgrade](https://github.com/worldwide-asset-exchange/wax-system-contracts/blob/0f83469f55098c94ab78ad2fb5b5aa268be9fc6c/tokenomics/README.md)
+
 </details>
 
 <details>
