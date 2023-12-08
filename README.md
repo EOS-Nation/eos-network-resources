@@ -116,22 +116,6 @@
 
 </details>
 
-<details>
-<summary><b>6. 🚧📖 Unified Resources</b></summary>
-
-### Timeline
-- Requires development and testing
-
-### Proposal
-
-- Combined CPU + NET as single ephemeral resource
-  - Deprecates the requirement of NET
-- Smart contract reference to allow on-chain co-signing
-  - Allows dapps to pay for CPU without abuse
-  - Extends WharfKit's co-signing wallet feature
-
-</details>
-
 ### Notes
 - ✅ ready to deploy
 - 🚧 requires development & testing
