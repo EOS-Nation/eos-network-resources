@@ -56,16 +56,17 @@
 
 - REX to accept a portion of unallocated inflation
   - modify `producer_pay::claimrewards` to support `rex::channel_to_rex`
-  - define new `global5` table with `inflation_rex_factor=20000` (previously 0)
-  - define new `setrexfactor` action to modify `inflation_rex_factor`
+  - define new `global5` table with
+    - `inflation_rex_factor=20000`
+    - `num_of_maturity_buckets=5`
+  - define new `setrexparam` action to modify `inflation_rex_factor` & `num_of_maturity_buckets`
 - Increase +2% of unallocated inflation going to REX
   - call `eosio::setinflation` action with the following parameters:
     - `annual_rate=500` (previously 300)
     - `inflation_pay_factor=50000` (previously 30000)
-- Remove proxy or vote for 21+ BPs requirement from REX
-  - remove `check_voting_requirement` checks from `buyrex`
-    - resolves circular dependencies between `delegatebw`, `voteproducer`, and `buyrex`. [#51](https://github.com/EOSIO/eosio.system/issues/51)
-    - allows for neutral actors to participate in REX (ex: EOS EVM Bridge)
+- Remove `check_voting_requirement` checks from `buyrex`
+  - resolves circular dependencies between `delegatebw`, `voteproducer`, and `buyrex`. [#51](https://github.com/EOSIO/eosio.system/issues/51)
+  - allows for neutral actors to participate in REX (ex: EOS EVM Bridge)
 
 ### Considerations
 - Increase REX staking period

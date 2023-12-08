@@ -35,7 +35,6 @@ time_point_sec system_contract::get_rex_maturity()
 }
 ```
 
-
 ### ACTION `eosio::setinflation`
 - `annual_rate`: Annual inflation rate of the core token supply.
 - `inflation_pay_factor`: Inverse of the fraction of the inflation used to reward block producers.
@@ -49,8 +48,13 @@ time_point_sec system_contract::get_rex_maturity()
 }
 ```
 
-### TABLE eosio::global4 changes
+### TABLE `eosio::global4` changes
 
 - `annual_rate`: 300 => 500
 - `inflation_pay_factor`: 30000 => 50000
 - `votepay_factor`: N/A
+
+### TABLE `eosio::global5` new
+
+- `num_of_maturity_buckets`: 5
+- `inflation_rex_factor`: 20000
