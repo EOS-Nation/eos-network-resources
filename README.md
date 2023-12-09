@@ -24,21 +24,19 @@
 <details>
 <summary><b>1. ✅ Modify RAM increase rate</b></summary>
 
-### Timeline
-- Immediate
-
 ### Proposal
+
+Set RAM increase rate to 0 bytes per block.
+
 - `eosio::setramrate` to `bytes_per_block=0`
 
 ### Considerations
 - Allow for signed integer for `bytes_per_block` RAM rate (allows decreasing virtual RAM supply)
+
 </details>
 
 <details>
 <summary><b>2. ✅ Removal of Deferred Transactions from System Contract</b></summary>
-
-### Timeline
-- Immediate
 
 ### Proposal
 - Deploy latest v3.2.0 system contract
@@ -49,16 +47,16 @@
 <details>
 <summary><b>3. 🚧 Staking Rewards</b></summary>
 
-### Timeline
-- Requires development and testing
-
 ### Proposal
+
+Revamp REX with modified parameters, increased allocation by 2%.
 
 - REX to accept a portion of unallocated inflation
   - modify `producer_pay::claimrewards` to support `rex::channel_to_rex`
   - define new `global5` table with
     - `inflation_rex_factor=20000`
     - `num_of_maturity_buckets=5`
+    - `rex_proceeds=0`
   - define new `setrexparam` action to modify `inflation_rex_factor` & `num_of_maturity_buckets`
 - Increase +2% of unallocated inflation going to REX
   - call `eosio::setinflation` action with the following parameters:
@@ -85,10 +83,12 @@
 <summary><b>4. 🚧 Increase maximum transaction time</b></summary>
 
 ### Operations
-- Deployment of Leap 5.0.0 (stable release)
-  - Assuming default of 30 ms for `max-transaction-time`, that effectively raises the CPU time available by 5x to 150 ms.
-  - Leap 5.0.0 brings the selective EOS VM OC feature which may increase some computations in EOS EVM by a similar multiplier.
-  - That is already getting us a significant gain in computation capacity per EOS transaction which should translate to higher overall gas limits per EVM transaction (assuming 1 EVM transaction per EOS transaction).
+
+**Deployment of Leap 5.0.0 (stable release)**
+
+- Assuming default of 30 ms for `max-transaction-time`, that effectively raises the CPU time available by 5x to 150 ms.
+- Leap 5.0.0 brings the selective EOS VM OC feature which may increase some computations in EOS EVM by a similar multiplier.
+- That is already getting us a significant gain in computation capacity per EOS transaction which should translate to higher overall gas limits per EVM transaction (assuming 1 EVM transaction per EOS transaction).
 
 ### No Change
 
@@ -99,20 +99,17 @@
 <details>
 <summary><b>5. 🚧 PowerUp technical improvement</b></summary>
 
-### Timeline
-- Requires development and testing
+### Proposal
+
+Introduce an enhanced Powerup utility "wrapper" function designed to facilitate user interaction with the native Powerup action in a seamless manner.
+
+- implement `powerup2` action
+  - pay with fixed amount of EOS (ex: "I want to pay 1 EOS")
+  - rent fixed amount of milliseconds (ex: "I want 10ms of CPU")
 
 ### No Change
 
 - Powerup CPU/NET ratios remain unchanged
-
-### Proposal
-- Powerup utility smart contract actions (must be backwards compatible)
-- Allow for auto-renewal
-  - similar to REX's `loan_fund` when using `eosio::rentcpu` action
-- Pay with fixed amount of EOS
-  - similar to REX's `loan_payment` when using `eosio::rentcpu` action
-  - auto-calculates net/cpu ratios based on current network usage
 
 </details>
 
