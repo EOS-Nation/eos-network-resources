@@ -31,7 +31,7 @@ Set RAM increase rate to 0 bytes per block.
 - `eosio::setramrate` to `bytes_per_block=0`
 
 ### Considerations
-- Allow for signed integer for `bytes_per_block` RAM rate (allows decreasing virtual RAM supply)
+- Allow for signed integer for `bytes_per_block` RAM rate (allows deflationary virtual RAM supply)
 
 </details>
 
