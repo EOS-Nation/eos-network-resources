@@ -39,8 +39,11 @@ Set RAM increase rate to 0 bytes per block.
 <summary><b>2. ✅ Removal of Deferred Transactions from System Contract</b></summary>
 
 ### Proposal
-- Deploy latest v3.2.0 system contract
-- Within the system contracts the actions `system_contract::bidname`, `system_contract::buyram`, `wrap::exec` no longer issue deferred transactions. This is a change for the `system_contract::bidname` action, and failed bids will need an explict refund. For the `system_contract::buyram` action the default behavior remains unchanged. The `wrap::exec` action has been rewritten to use send instead of `send_deferred`.
+[Deploy latest v3.2.0 system contract](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.2.0)
+
+- Within the system contracts the actions `system_contract::bidname`, `system_contract::buyram`, `wrap::exec` no longer issue deferred transactions.
+- This is a change for the `system_contract::bidname` action, and failed bids will need an explict refund. For the `system_contract::buyram` action the default behavior remains unchanged.
+- The `wrap::exec` action has been rewritten to use send instead of `send_deferred`.
 
 </details>
 
@@ -84,7 +87,7 @@ Revamp REX with modified parameters, increased allocation by 2%.
 
 ### Operations
 
-**Deployment of Leap 5.0.0 (stable release)**
+**[Deployment of Leap 5.0.0](https://github.com/AntelopeIO/leap/releases/tag/v5.0.0-rc3) (stable release)**
 
 - Assuming default of 30 ms for `max-transaction-time`, that effectively raises the CPU time available by 5x to 150 ms.
 - Leap 5.0.0 brings the selective EOS VM OC feature which may increase some computations in EOS EVM by a similar multiplier.
