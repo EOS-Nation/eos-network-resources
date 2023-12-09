@@ -52,15 +52,17 @@ Set RAM increase rate to 0 bytes per block.
 
 ### Proposal
 
-Revamp REX with modified parameters, increased allocation by 2%.
+Revamp REX with modified parameters, increased allocation by 2% & burn system fees.
 
+- Burn mechanism for system fees (Name Bids, RAM fee, PowerUp fees, more...)
+  - All system fees are burned (sent to `eosio.null`)
+  - Could cause the network to be deflationary
 - REX to accept a portion of unallocated inflation
   - modify `producer_pay::claimrewards` to support `rex::channel_to_rex`
-  - define new `global5` table with
-    - `inflation_rex_factor=20000`
-    - `num_of_maturity_buckets=5`
-    - `rex_proceeds=0`
-  - define new `setrexparam` action to modify `inflation_rex_factor` & `num_of_maturity_buckets`
+  - define new `rexparams` table with
+    - `inflation_rex_factor=50000` (50% of unallocated inflation)
+    - `num_of_maturity_buckets=5` (4 days)
+  - define new `setrexparams` action to modify `inflation_rex_factor` & `num_of_maturity_buckets`
 - Increase +2% of unallocated inflation going to REX
   - call `eosio::setinflation` action with the following parameters:
     - `annual_rate=500` (previously 300)
