@@ -115,6 +115,10 @@ Introduce an enhanced Powerup utility "wrapper" function designed to facilitate 
 
 - Powerup CPU/NET ratios remain unchanged
 
+### References
+
+- https://ultra.io/articles/61-3/ultra-blockchain-resource-model
+
 </details>
 
 ### Notes
