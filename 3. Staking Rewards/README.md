@@ -1,3 +1,6 @@
+![image](https://github.com/EOS-Nation/eos-network-resources/assets/550895/3c37377c-f97f-416c-8dfa-aa241a310c34)
+
+
 ```c++
 /**
 * @brief Channels system fees to REX pool

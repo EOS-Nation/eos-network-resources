@@ -54,6 +54,8 @@ Set RAM increase rate to 0 bytes per block.
 
 Revamp REX with modified parameters, increased allocation by 2% & burn system fees.
 
+![image](https://github.com/EOS-Nation/eos-network-resources/assets/550895/3c37377c-f97f-416c-8dfa-aa241a310c34)
+
 - Burn mechanism for system fees (Name Bids, RAM fee, PowerUp fees, more...)
   - All system fees are burned (sent to `eosio.null`)
   - Could cause the network to be deflationary
