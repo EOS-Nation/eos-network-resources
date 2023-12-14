@@ -24,6 +24,8 @@
 <details>
 <summary><b>1. ✅ Modify RAM increase rate</b></summary>
 
+> [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/1.%20Modify%20RAM%20Increase%20Rate)
+
 ### Proposal
 
 Set RAM increase rate to 0 bytes per block.
@@ -42,6 +44,8 @@ Set RAM increase rate to 0 bytes per block.
 <details>
 <summary><b>2. ✅ Removal of Deferred Transactions from System Contract</b></summary>
 
+> [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/2.%20Remove%20Deferred%20Transactions%20from%20System%20Contract)
+
 ### Proposal
 [Deploy latest v3.2.0 system contract](https://github.com/eosnetworkfoundation/eos-system-contracts/releases/tag/v3.2.0)
 
@@ -53,6 +57,8 @@ Set RAM increase rate to 0 bytes per block.
 
 <details>
 <summary><b>3. 🚧 Staking Rewards</b></summary>
+
+> [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/3.%20Staking%20Rewards)
 
 ### Proposal
 
@@ -93,6 +99,8 @@ Revamp REX with modified parameters, increased allocation by 2% & burn system fe
 <details>
 <summary><b>4. 🚧 Increase maximum transaction time</b></summary>
 
+> [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/4.%20Increase%20Maximum%20Transaction%20Time)
+
 ### Operations
 
 **[Deployment of Leap 5.0.0](https://github.com/AntelopeIO/leap/releases/tag/v5.0.0-rc3) (stable release)**
@@ -109,6 +117,8 @@ Revamp REX with modified parameters, increased allocation by 2% & burn system fe
 
 <details>
 <summary><b>5. 🚧📖 PowerUp technical improvements</b></summary>
+
+> [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/5.%20PowerUp%20technical%20improvements)
 
 ### Proposal
 
