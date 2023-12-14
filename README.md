@@ -30,6 +30,10 @@ Set RAM increase rate to 0 bytes per block.
 
 - `eosio::setramrate` to `bytes_per_block=0`
 
+### MSIG
+
+- https://bloks.io/msig/eosnationftw/setramrate
+
 ### Considerations
 - Allow for signed integer for `bytes_per_block` RAM rate (allows deflationary virtual RAM supply)
 

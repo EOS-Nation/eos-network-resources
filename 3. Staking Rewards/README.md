@@ -1,5 +1,32 @@
-![image](https://github.com/EOS-Nation/eos-network-resources/assets/550895/3c37377c-f97f-416c-8dfa-aa241a310c34)
+# 3. Staking Rewards
 
+### Introduction
+
+The REX resource exchange provides liquidity to EOS resources, increasing the efficiency of resource allocation and offering a small native yield to EOS users willing to stake their tokens for rental. The system, while robust, is currently underutilized, with 58M EOS staked in the rental exchange (~0.5% of total supply). The low rewards for staking to REX and the existence of other higher-yield staking opportunities keep most tokens out of the resource exchange.
+
+### Motivation
+
+REX APY is small, at under 0.2% annual yield. This low yield makes it difficult to incentivize users to stake their tokens in REX, as more lucrative yield opportunities exist. Much in the same way as the Yield+ program incentivized increased DeFi TVL on EOS, the network could dramatically increase REX rewards and incentivize REX usage by directing a portion of token issuance to REX, offering a native staking solution that could be competitive with other EOS Yield offerings.
+
+Precise APY would depend on usage. REX rewards are split pro-rata among all REX users, so low usage would result in high yields, which would decrease with increased usage to a minimum of 2% yield with 100% of tokens staked to REX and no other fees generated.
+
+Because REX requires users of the system to vote on at least 21 block producers, this removes the option of REX staking for exchanges and other entities that, for legal or other reasons, do not wish to vote. It also prevents users of EOS EVM or other staking smart contracts from receiving any REX rewards.
+
+### Proposal
+
+Increase token issuance by 2% and modify the claimrewards action to support the ability to channel these new tokens to REX. Create a new table that tracks the portion of inflation sent to REX and the number of maturity buckets (the number of days REX funds remain locked after deposit + 1). Create an action to modify that table.
+
+Remove voting requirements from REX to allow REX staking from EOS EVM or other staking smart contracts. Removing these requirements also resolves circular dependencies requiring users to stake tokens to NET or CPU in order to stake tokens to REX, as outlined in https://github.com/EOSIO/eosio.system/issues/51 .
+
+Additional considerations include increasing the staking lockup period and modifying the REX contract to prevent liquid REX staking.
+
+More details at https://github.com/EOS-Nation/eos-network-resources#proposal-2 .
+
+### Timeline
+
+Requires development and testing
+
+### Code references
 
 ```c++
 /**
