@@ -42,7 +42,7 @@ Set RAM increase rate to 0 bytes per block.
 </details>
 
 <details>
-<summary><b>2. ✅ Removal of Deferred Transactions from System Contract</b></summary>
+<summary><b>2. ☑️ Removal of Deferred Transactions from System Contract</b></summary>
 
 > [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/2.%20Remove%20Deferred%20Transactions%20from%20System%20Contract)
 
@@ -140,6 +140,7 @@ Introduce an enhanced Powerup utility "wrapper" function designed to facilitate 
 </details>
 
 ### Notes
-- ✅ ready to deploy
+- ✅ deployed
+- ☑️ ready to deploy
 - 🚧 requires development & testing
 - 📖 requires additional research
