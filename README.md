@@ -56,7 +56,7 @@ Set RAM increase rate to 0 bytes per block.
 </details>
 
 <details>
-<summary><b>3. 🚧 Staking Rewards</b></summary>
+<summary><s><b>3. 🚧 Staking Rewards</b></s></summary>
 
 > [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/3.%20Staking%20Rewards)
 
