@@ -22,7 +22,7 @@
 ## Proposals
 
 <details>
-<summary><b>1. ✅ Modify RAM increase rate</b></summary>
+<summary><b>1.0 ✅ Modify RAM increase rate</b></summary>
 
 > [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/1.%20Modify%20RAM%20Increase%20Rate)
 
@@ -36,8 +36,73 @@ Set RAM increase rate to 0 bytes per block.
 
 - https://bloks.io/msig/eosnationftw/setramrate
 
-### Considerations
+</details>
+
+
+<details>
+<summary><b>1.1 🚧 Deflationary RAM rate</b></summary>
+
+### Proposal
+
 - Allow for signed integer for `bytes_per_block` RAM rate (allows deflationary virtual RAM supply)
+
+### Requirements
+- Set `setramrate::bytes_per_block` to `int16_t` (signed integer)
+- Set `global2::new_ram_per_block` to `int16_t` (signed integer)
+
+### Preconditions
+- `max_ram_size` cannot be below `total_ram_bytes_reserved`
+
+### References
+
+- **system_contract**
+  - [update_ram_supply](https://github.com/eosnetworkfoundation/eos-system-contracts/blob/c6113dbec2282825ce8d1fb6396fe82500af9019/contracts/eosio.system/src/eosio.system.cpp#L87-L103)
+  - [setramrate](https://github.com/eosnetworkfoundation/eos-system-contracts/blob/c6113dbec2282825ce8d1fb6396fe82500af9019/contracts/eosio.system/src/eosio.system.cpp#L105-L110)
+  - [global](https://github.com/eosnetworkfoundation/eos-system-contracts/blob/c6113dbec2282825ce8d1fb6396fe82500af9019/contracts/eosio.system/include/eosio.system/eosio.system.hpp#L142-L146)
+  - [global2](https://github.com/eosnetworkfoundation/eos-system-contracts/blob/c6113dbec2282825ce8d1fb6396fe82500af9019/contracts/eosio.system/include/eosio.system/eosio.system.hpp#L168-L179)
+
+</details>
+
+<details>
+<summary><b>1.2 🚧 Transferable RAM</b></summary>
+
+### Proposal
+
+New RAM system contract action to transfer RAM from one account to another without any fees.
+
+#### ACTION: `transferram`
+
+- `account {name}`
+- `receiver {name}`
+- `bytes {int64}`
+
+
+### Requirements
+- Charges 0% fee to transfer
+- Only uncommited RAM can be transferred
+- Notify `receiver` by `require_recipient`
+
+### Preconditions
+- `account` must have sufficient `ram_bytes` prior to transfer
+- `account` decrease `ram_bytes` by `bytes`
+- `receiver` must exists
+- `receiver` account can be a contract
+- `receiver` account can have zero available RAM bytes
+- `receiver` increase `ram_bytes` by `bytes`
+- handle `ram_managed` accounts
+
+### References
+
+- **system_contract**
+  - [buyram](https://github.com/eosnetworkfoundation/eos-system-contracts/blob/c6113dbec2282825ce8d1fb6396fe82500af9019/contracts/eosio.system/src/delegate_bandwidth.cpp#L43-L103)
+  - [sellram](https://github.com/eosnetworkfoundation/eos-system-contracts/blob/c6113dbec2282825ce8d1fb6396fe82500af9019/contracts/eosio.system/src/delegate_bandwidth.cpp#L111-L159)
+- **resource_limits_manager**
+  - [verify_account_ram_usage](https://github.com/AntelopeIO/leap/blob/96965434094d8d9a3808c7060061eadf5b632b8d/libraries/chain/resource_limits.cpp#L232-L242)
+  - [set_account_limits](https://github.com/AntelopeIO/leap/blob/96965434094d8d9a3808c7060061eadf5b632b8d/libraries/chain/resource_limits.cpp#L249-L270)
+  - [get_account_limits](https://github.com/AntelopeIO/leap/blob/96965434094d8d9a3808c7060061eadf5b632b8d/libraries/chain/resource_limits.cpp#L303-L315)
+- **privileged**
+  - [set_resource_limits](https://github.com/AntelopeIO/leap/blob/96965434094d8d9a3808c7060061eadf5b632b8d/libraries/chain/webassembly/privileged.cpp#L27-L35)
+  - [get_resource_limits](https://github.com/AntelopeIO/leap/blob/96965434094d8d9a3808c7060061eadf5b632b8d/libraries/chain/webassembly/privileged.cpp#L37C20-L42)
 
 </details>
 
