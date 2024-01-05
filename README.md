@@ -199,12 +199,16 @@ Revamp REX with modified parameters, increased allocation by 2% & burn system fe
 
 ### Proposal
 
-Introduce an enhanced Powerup utility "wrapper" function designed to facilitate user interaction with the native Powerup action in a seamless manner.
+Introduce an enhanced Powerup utility function designed to facilitate user interaction with the native Powerup action in a seamless manner.
 
-- implement `powerup2` action
-  - Make a payment using a set amount of EOS (ex: "I want to pay 1 EOS")
-  - Lease a specific duration of CPU time (ex: "I want 10ms of CPU")
-  - Abstract NET allocations, ensuring that each CPU allocation is accompanied by a NET allocation at a fixed 1:10 ratio.
+- Make a payment using a set amount of EOS (ex: "I want to pay 1 EOS")
+- Lease a specific duration of CPU time (ex: "I want 10ms of CPU")
+
+### Requirements
+
+- Make `powerupms` to do 1ms of CPU
+- Make `powerupcost` to pay 1 EOS for CPU
+- Make `powerupkb` to buy 1kb of NET
 
 ### No Change
 
