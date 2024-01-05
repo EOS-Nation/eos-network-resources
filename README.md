@@ -76,7 +76,6 @@ New RAM system contract action to transfer RAM from one account to another witho
 - `receiver {name}`
 - `bytes {int64}`
 
-
 ### Requirements
 - Charges 0% fee to transfer
 - Only uncommited RAM can be transferred
@@ -103,6 +102,19 @@ New RAM system contract action to transfer RAM from one account to another witho
 - **privileged**
   - [set_resource_limits](https://github.com/AntelopeIO/leap/blob/96965434094d8d9a3808c7060061eadf5b632b8d/libraries/chain/webassembly/privileged.cpp#L27-L35)
   - [get_resource_limits](https://github.com/AntelopeIO/leap/blob/96965434094d8d9a3808c7060061eadf5b632b8d/libraries/chain/webassembly/privileged.cpp#L37C20-L42)
+
+</details>
+
+<details>
+<summary><b>1.3 🚧 RAM Notifications and Logging</b></summary>
+
+### Proposal
+
+- Improve RAM logging by including additional inline actions and notifications via the use of `require_recipient`.
+
+### Requirements
+- Add `require_recipient` to `buyram`, `buyrambytes` & `transferram` actions
+- Add inline log actions to `sellram`, `buyram`, `buyrambytes` & `transferram` actions
 
 </details>
 
