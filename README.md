@@ -114,11 +114,20 @@ https://github.com/eosnetworkfoundation/eos-system-contracts/pull/102
 
 ### Proposal
 
-- Improve RAM logging by including additional inline actions and notifications via the use of `require_recipient`.
+Improve RAM logging by including additional inline actions and notifications via the use of `require_recipient`.
 
-### Requirements
-- Add `require_recipient` to `buyram`, `buyrambytes` & `transferram` actions
-- Add inline log actions to `sellram`, `buyram`, `buyrambytes` & `transferram` actions
+https://github.com/eosnetworkfoundation/eos-system-contracts/pull/103
+
+## API Changes
+
+- Add `require_recipient(receiver)` on `buyram` & `buyrambytes` actions
+
+#### ACTION: `logbuyram`
+
+- `payer {name}`
+- `receiver {name}`
+- `quant {asset}`
+- `bytes {int64}`
 
 </details>
 
