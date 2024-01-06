@@ -44,7 +44,9 @@ Set RAM increase rate to 0 bytes per block.
 
 ### Proposal
 
-- Allow for signed integer for `bytes_per_block` RAM rate (allows deflationary virtual RAM supply)
+Allow for signed integer for `bytes_per_block` RAM rate (allows deflationary virtual RAM supply)
+
+https://github.com/eosnetworkfoundation/eos-system-contracts/pull/101
 
 ### Requirements
 - Set `setramrate::bytes_per_block` to `int16_t` (signed integer)
@@ -70,10 +72,12 @@ Set RAM increase rate to 0 bytes per block.
 
 New RAM system contract action to transfer RAM from one account to another without any fees.
 
-#### ACTION: `transferram`
+https://github.com/eosnetworkfoundation/eos-system-contracts/pull/102
 
-- `account {name}`
-- `receiver {name}`
+#### ACTION: `ramtransfer`
+
+- `from {name}`
+- `to {name}`
 - `bytes {int64}`
 
 ### Requirements
@@ -82,12 +86,12 @@ New RAM system contract action to transfer RAM from one account to another witho
 - Notify `receiver` by `require_recipient`
 
 ### Preconditions
-- `account` must have sufficient `ram_bytes` prior to transfer
-- `account` decrease `ram_bytes` by `bytes`
-- `receiver` must exists
-- `receiver` account can be a contract
-- `receiver` account can have zero available RAM bytes
-- `receiver` increase `ram_bytes` by `bytes`
+- `from` must have sufficient `ram_bytes` prior to transfer
+- `from` decrease `ram_bytes` by `bytes`
+- `to` must exists
+- `to` account can be a contract
+- `to` account can have zero available RAM bytes
+- `to` increase `ram_bytes` by `bytes`
 - handle `ram_managed` accounts
 
 ### References
