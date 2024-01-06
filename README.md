@@ -22,7 +22,7 @@
 ## Proposals
 
 <details>
-<summary><b>1.0 ✅ Modify RAM increase rate</b></summary>
+<summary><b>1.0 ✅ Modify RAM increase rate to 0</b></summary>
 
 > [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/1.%20Modify%20RAM%20Increase%20Rate)
 
