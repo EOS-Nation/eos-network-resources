@@ -88,3 +88,11 @@ Dilute those not participating (~85% of EOS holders) rewarding those who are par
 - **Mechanism:** Incentivize unique contributions that enhance the EOS ecosystem, such as developing new user interfaces, creating innovative smart contract solutions, or pioneering novel use cases for EOS.
 
 - **Impact:** Stimulates innovation and diversity in the EOS ecosystem, leading to new developments and applications.
+
+## Issuance Schedule
+
+> Note: The issuance schedule is subject to change based on community feedback and consensus.
+
+For example, the following issuance schedule could be implemented:
+
+![issuance](https://github.com/EOS-Nation/eos-network-resources/assets/550895/ee3eda00-5269-4050-9706-1a1311f1061d)
