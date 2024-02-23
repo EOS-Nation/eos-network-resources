@@ -95,4 +95,5 @@ Dilute those not participating (~85% of EOS holders) rewarding those who are par
 
 For example, the following issuance schedule could be implemented:
 
-![issuance](https://github.com/EOS-Nation/eos-network-resources/assets/550895/ee3eda00-5269-4050-9706-1a1311f1061d)
+<img width="954" alt="image" src="https://github.com/EOS-Nation/eos-network-resources/assets/550895/b64fe750-d392-4122-ad15-d86539f3277c">
+

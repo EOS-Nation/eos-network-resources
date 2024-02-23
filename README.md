@@ -247,6 +247,8 @@ Introduce an enhanced Powerup utility function designed to facilitate user inter
 
 Dilute those not participating (~85% of EOS holders) rewarding those who are participating.
 
+<img width="954" alt="image" src="https://github.com/EOS-Nation/eos-network-resources/assets/550895/b64fe750-d392-4122-ad15-d86539f3277c">
+
 ### Technical requirements
 
 - Set `setinflation` to `annual_rate=0`
