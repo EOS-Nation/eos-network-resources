@@ -254,6 +254,7 @@ Dilute those not participating (~85% of EOS holders) rewarding those who are par
 - Call `eosio.token::issue` to mint ~818M EOS
 - Implement vesting contracts for newly minted tokens
 - Implement long term tiered staking system
+- Implement new block producer reward mechanism (after BLS is activated)
 
 </details>
 
