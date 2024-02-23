@@ -233,6 +233,29 @@ Introduce an enhanced Powerup utility function designed to facilitate user inter
 
 </details>
 
+<summary><b>6. 🚧📖 Cap EOS supply at 2B tokens</b></summary>
+
+> [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/6.%20Cap%20EOS%20supply%20at%202B%20tokens)
+
+### Proposal
+
+- Turn off inflation
+- Mint ~818M EOS
+- Cap EOS supply at 2B tokens
+- Release newly minted tokens over period of time with aggressive release in the beginning tapering over time.
+
+Dilute those not participating (~85% of EOS holders) rewarding those who are participating.
+
+### Technical requirements
+
+- Set `setinflation` to `annual_rate=0`
+- Modify `eosio.token::max_supply` to `2,000,000,000.0000 EOS`
+- Call `eosio.token::issue` to mint ~818M EOS
+- Implement vesting contracts for newly minted tokens
+- Implement long term tiered staking system
+
+</details>
+
 ### Notes
 - ✅ deployed
 - ☑️ ready to deploy

@@ -2,7 +2,7 @@
 
 ### Introduction
 
-EOS Powerup improved the initial resource allocation system, allowing accounts to “power up” their resources temporarily. Since its release, various community initiatives have utilized this system to help improve user experience by abstracting away the resource management tools built into Antelope. 
+EOS Powerup improved the initial resource allocation system, allowing accounts to “power up” their resources temporarily. Since its release, various community initiatives have utilized this system to help improve user experience by abstracting away the resource management tools built into Antelope.
 
 ### Motivation
 While the PowerUp model is useful, it lacks a few key features that would allow it to streamline resource allocation more profoundly. Other community members have built systems that help streamline the Powerup process. However, the system native to the protocol is still complex and does not offer these features.
