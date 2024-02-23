@@ -233,6 +233,7 @@ Introduce an enhanced Powerup utility function designed to facilitate user inter
 
 </details>
 
+<details>
 <summary><b>6. 🚧📖 Cap EOS supply at 2B tokens</b></summary>
 
 > [Introduction & Motivation](https://github.com/EOS-Nation/eos-network-resources/tree/main/6.%20Cap%20EOS%20supply%20at%202B%20tokens)
